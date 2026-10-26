@@ -19,8 +19,6 @@ npm run build         # build the site into client/dist
 npm start             # serve the site and API on http://localhost:5000
 ```
 
-On Windows you can double-click `start-site.bat` after building.
-
 For development with hot reload, run `npm run server` and `npm run client`, then open http://localhost:5173.
 
 ## Products and prices
