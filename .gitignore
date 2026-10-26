@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# Build output (run `npm run build`)
-client/dist/
-
 # Customer data written by the server at runtime
 server/data/orders.json
 server/data/messages.json
