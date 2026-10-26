@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1, "name": "Herbal Hair Growth Oil", "category": "oils", "bestseller": true,
+    "image": "/images/products/herbal-hair-growth-oil.jpg",
+    "description": "With the goodness of Amla, Hibiscus, Brahmi, Curry Leaves, Black Seed, Coconut Oil & Fenugreek. Promotes hair growth, reduces hair fall, nourishes roots and adds natural shine & softness. Stronger roots, healthier hair — naturally.",
+    "sizes": [
+      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
+      { "label": "500 ml", "price": 600, "mrp": 600 }
+    ]
+  },
+  {
+    "id": 2, "name": "Classic Herbal Hair Growth Oil", "category": "oils", "bestseller": true,
+    "image": "/images/products/classic-hair-growth-oil.jpg",
+    "description": "Our original formula, made from 100% natural ingredients with a time-honoured slow herbal infusion for deep nourishment and root strengthening. Best before 24 months from manufacturing.",
+    "sizes": [
+      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
+      { "label": "500 ml", "price": 600, "mrp": 600 }
+    ]
+  },
+  {
+    "id": 3, "name": "Pure & Natural Coconut Oil", "category": "oils", "bestseller": true,
+    "image": "/images/products/coconut-oil.jpg",
+    "description": "Made with nature's best. Nourishes, moisturizes and protects — promotes hair growth, deeply moisturizes skin, strengthens and nourishes. No added chemicals, no preservatives, 100% pure. For healthy skin, hair & life.",
+    "sizes": [
+      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
+      { "label": "500 ml", "price": 600, "mrp": 600 }
+    ]
+  }
+]

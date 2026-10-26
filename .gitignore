@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output (run `npm run build`)
+client/dist/
+
+# Customer data written by the server at runtime
+server/data/orders.json
+server/data/messages.json
+server/data/subscribers.json
+
+# Previous design kept only as a local backup
+backup-botanical-design/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
