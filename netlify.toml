@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# API calls go to the Express app running as a Netlify Function
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# Single-page app: let Vue Router handle every other path
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
