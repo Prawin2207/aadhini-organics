@@ -77,7 +77,7 @@ const loading = ref(false);
 const error = ref('');
 const order = ref(null);
 
-const WHATSAPP_NUMBER = '916383617097';
+const WHATSAPP_NUMBER = '919342737514';
 
 function whatsappMessage(orderId) {
   const lines = cart.items.map((i) => `• ${i.name} (${i.size}) × ${i.qty} = ${rupees(i.price * i.qty)}`);
