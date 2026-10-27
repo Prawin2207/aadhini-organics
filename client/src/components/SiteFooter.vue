@@ -22,8 +22,6 @@
         <h4>Company</h4>
         <RouterLink to="/about">Our Story</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
-        <a href="#">Shipping Policy</a>
-        <a href="#">Returns</a>
       </div>
       <div>
         <h4>Visit Us</h4>

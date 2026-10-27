@@ -93,29 +93,31 @@
         <span class="eyebrow">Testimonials</span>
         <h2>What our <em>families</em> say</h2>
       </div>
-      <div class="testi-grid">
-        <figure v-for="t in testimonials" :key="t.name" class="card testi">
-          <div class="stars">★★★★★</div>
-          <blockquote>“{{ t.quote }}”</blockquote>
-          <figcaption>
-            <span class="avatar">{{ t.name[0] }}</span>
-            <div>
-              <strong>{{ t.name }}</strong>
-              <small>{{ t.city }}</small>
-            </div>
-          </figcaption>
-        </figure>
+    </div>
+    <!-- Two identical copies scroll left forever; the second is hidden from screen readers -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <div v-for="copy in 2" :key="copy" class="marquee-group" :aria-hidden="copy === 2 ? 'true' : null">
+          <figure v-for="t in testimonials" :key="t.name" class="card testi">
+            <div class="stars">★★★★★</div>
+            <blockquote>“{{ t.quote }}”</blockquote>
+            <figcaption>
+              <span class="avatar">{{ t.name[0] }}</span>
+              <div>
+                <strong>{{ t.name }}</strong>
+                <small>{{ t.city }}</small>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
-
-  <Newsletter />
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import ProductCard from '../components/ProductCard.vue';
-import Newsletter from '../components/Newsletter.vue';
 import { api } from '../api.js';
 
 const bestsellers = ref([]);
@@ -127,10 +129,17 @@ const trust = [
   { icon: '🚚', title: 'Free Shipping', text: 'On orders over ₹999' }
 ];
 
+// Sample reviews — replace with real customer feedback before launch
 const testimonials = [
-  { name: 'Lakshmi R.', city: 'Chennai', quote: 'The herbal hair oil smells just like the one my grandmother used to make. My hair fall has reduced and it feels so much softer.' },
-  { name: 'Arun K.', city: 'Bengaluru', quote: 'I have been using the classic hair growth oil for a few months. Light, non-sticky, and the bottles arrive well packed.' },
-  { name: 'Priya S.', city: 'Coimbatore', quote: 'The virgin coconut oil is pure and fragrant — I use it for cooking and for my hair. I love knowing where it comes from.' }
+  { name: 'Shanthi', city: 'Madurai', quote: 'Oil unmaiyalumae nalla iruku! Best for my hair, nalla improvement iruku.' },
+  { name: 'Lakshmi R.', city: 'Chennai', quote: 'The herbal hair oil smells just like the one my grandmother used to make. My hair fall has reduced.' },
+  { name: 'Kavitha M.', city: 'Trichy', quote: 'Hair fall romba kammi aagiduchu. 2 months use panren, semma result!' },
+  { name: 'Divya', city: 'Salem', quote: 'Smell romba nalla iruku, sticky-ah illa. Daily use panna perfect-ah iruku.' },
+  { name: 'Arun K.', city: 'Bengaluru', quote: 'Using the classic hair growth oil for a few months. Light, non-sticky, and well packed.' },
+  { name: 'Meena', city: 'Tirunelveli', quote: 'Coconut oil romba pure-ah iruku. En paiyan-ku kooda use panren, no problem at all.' },
+  { name: 'Revathi S.', city: 'Erode', quote: 'Dandruff kammi aagiduchu, hair soft-ah aagiduchu. Definitely repeat order panuven!' },
+  { name: 'Priya S.', city: 'Coimbatore', quote: 'Pure and fragrant coconut oil — I use it for my skin and hair. Love it!' },
+  { name: 'Gayathri', city: 'Vellore', quote: 'Amma kaila senja oil maadhiri iruku. Hair growth-la nalla change theriyudhu.' }
 ];
 
 onMounted(async () => {
@@ -264,14 +273,53 @@ onMounted(async () => {
   color: var(--forest);
 }
 
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-group {
+  display: flex;
   gap: var(--gutter);
+  padding-right: var(--gutter);
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
 }
 .testi {
   margin: 0;
-  padding: 2rem;
+  padding: 1.75rem;
+  width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.testi:hover {
+  transform: none;
+}
+.testi figcaption {
+  margin-top: auto;
 }
 .stars {
   color: var(--turmeric);
@@ -311,9 +359,6 @@ figcaption small {
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .testi-grid {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 767px) {
   .seal {
@@ -323,6 +368,9 @@ figcaption small {
   }
   .stats {
     gap: 1.5rem;
+  }
+  .testi {
+    width: 280px;
   }
 }
 </style>
