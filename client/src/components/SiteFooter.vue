@@ -13,8 +13,8 @@
       </div>
       <div>
         <h4>Shop</h4>
-        <RouterLink to="/shop?q=hair">Hair Care</RouterLink>
-        <RouterLink to="/shop?q=coconut">Skin Care</RouterLink>
+        <RouterLink to="/shop?category=oils">Hair Oils</RouterLink>
+        <RouterLink to="/shop?category=soaps">Herbal Soaps</RouterLink>
         <RouterLink to="/shop">Bestsellers</RouterLink>
         <RouterLink to="/shop">All Products</RouterLink>
       </div>

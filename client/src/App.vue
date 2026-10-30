@@ -1,4 +1,5 @@
 <template>
+  <OfferBar />
   <SiteHeader />
   <main>
     <RouterView />
@@ -10,6 +11,7 @@
 </template>
 
 <script setup>
+import OfferBar from './components/OfferBar.vue';
 import SiteHeader from './components/SiteHeader.vue';
 import SiteFooter from './components/SiteFooter.vue';
 import { useCart } from './stores/cart.js';

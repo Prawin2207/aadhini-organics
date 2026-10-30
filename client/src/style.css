@@ -110,6 +110,18 @@ p {
   max-width: 640px;
   margin: 0 auto 3rem;
 }
+/* Classic ornament under section titles: ——— ◆ ——— */
+.section-head h2::after {
+  content: '◆';
+  display: block;
+  width: 120px;
+  margin: 14px auto 0;
+  font: 9px/12px var(--sans);
+  text-align: center;
+  color: var(--turmeric);
+  background: linear-gradient(var(--turmeric), var(--turmeric)) left center / 48px 1px no-repeat,
+    linear-gradient(var(--turmeric), var(--turmeric)) right center / 48px 1px no-repeat;
+}
 
 .eyebrow {
   display: inline-block;

@@ -29,19 +29,6 @@
     </div>
   </section>
 
-  <!-- Trust strip -->
-  <section class="trust">
-    <div class="container trust-grid">
-      <div v-for="t in trust" :key="t.title" class="trust-item">
-        <span class="icon">{{ t.icon }}</span>
-        <div>
-          <strong>{{ t.title }}</strong>
-          <small>{{ t.text }}</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Bestsellers -->
   <section class="section alt">
     <div class="container">
@@ -78,9 +65,7 @@
         </p>
         <ul class="points">
           <li>✓ No chemicals, preservatives or refining</li>
-          <li>✓ Fair, upfront payments to farmers</li>
-          <li>✓ Lab-tested every batch</li>
-        </ul>
+          <li>✓ Fair, upfront payments to farmers</li>        </ul>
         <RouterLink to="/about" class="btn btn-primary">Read Our Story</RouterLink>
       </div>
     </div>
@@ -122,20 +107,13 @@ import { api } from '../api.js';
 
 const bestsellers = ref([]);
 
-const trust = [
-  { icon: '🌱', title: '100% Organic', text: 'Certified natural farming' },
-  { icon: '🧪', title: 'Chemical-free', text: 'No preservatives, ever' },
-  { icon: '🚜', title: 'Farm Direct', text: 'Straight from 120+ farmers' },
-  { icon: '🚚', title: 'Free Shipping', text: 'On orders over ₹999' }
-];
-
 // Sample reviews — replace with real customer feedback before launch
 const testimonials = [
   { name: 'Shanthi', city: 'Madurai', quote: 'Oil unmaiyalumae nalla iruku! Best for my hair, nalla improvement iruku.' },
   { name: 'Lakshmi R.', city: 'Chennai', quote: 'The herbal hair oil smells just like the one my grandmother used to make. My hair fall has reduced.' },
   { name: 'Kavitha M.', city: 'Trichy', quote: 'Hair fall romba kammi aagiduchu. 2 months use panren, semma result!' },
   { name: 'Divya', city: 'Salem', quote: 'Smell romba nalla iruku, sticky-ah illa. Daily use panna perfect-ah iruku.' },
-  { name: 'Arun K.', city: 'Bengaluru', quote: 'Using the classic hair growth oil for a few months. Light, non-sticky, and well packed.' },
+  { name: 'Arun K.', city: 'Bengaluru', quote: 'Using the dandruff care oil for a few months. Light, non-sticky, and well packed.' },
   { name: 'Meena', city: 'Tirunelveli', quote: 'Coconut oil romba pure-ah iruku. En paiyan-ku kooda use panren, no problem at all.' },
   { name: 'Revathi S.', city: 'Erode', quote: 'Dandruff kammi aagiduchu, hair soft-ah aagiduchu. Definitely repeat order panuven!' },
   { name: 'Priya S.', city: 'Coimbatore', quote: 'Pure and fragrant coconut oil — I use it for my skin and hair. Love it!' },
@@ -214,31 +192,6 @@ onMounted(async () => {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.trust {
-  background: var(--forest);
-  color: var(--cream);
-  padding: 1.75rem 0;
-}
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-.trust-item {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.trust-item .icon {
-  font-size: 26px;
-}
-.trust-item strong {
-  display: block;
-}
-.trust-item small {
-  opacity: 0.75;
 }
 
 .alt {
@@ -355,9 +308,6 @@ figcaption small {
   .story {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-  .trust-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 767px) {

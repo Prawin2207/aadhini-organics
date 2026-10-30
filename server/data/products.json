@@ -1,29 +1,250 @@
 [
   {
-    "id": 1, "name": "Herbal Hair Growth Oil", "category": "oils", "bestseller": true,
+    "id": 1,
+    "name": "Herbal Hair Growth Oil",
+    "category": "oils",
+    "bestseller": true,
+    "stock": 8,
     "image": "/images/products/herbal-hair-growth-oil.jpg",
-    "description": "With the goodness of Amla, Hibiscus, Brahmi, Curry Leaves, Black Seed, Coconut Oil & Fenugreek. Promotes hair growth, reduces hair fall, nourishes roots and adds natural shine & softness. Stronger roots, healthier hair — naturally.",
+    "tagline": "Nature's Goodness, Crafted for Your Hair!",
+    "description": "Discover the goodness of traditional herbs blended with nourishing oils. Our Herbal Hair Growth Oil is thoughtfully crafted to complement your regular hair care routine and nourish your hair naturally.",
+    "ingredients": "A blend of traditional herbs and nourishing natural oils.",
+    "benefits": [
+      "Helps nourish the hair and scalp.",
+      "Supports a healthy hair care routine.",
+      "Helps keep hair soft and manageable.",
+      "Inspired by traditional herbal hair care."
+    ],
+    "howToUse": [
+      "Apply a suitable amount of oil to your scalp and hair.",
+      "Gently massage using your fingertips.",
+      "Leave it on for a comfortable period before washing.",
+      "Use regularly as part of your hair care routine."
+    ],
+    "closing": {
+      "title": "Pure Natural Care",
+      "text": "Your Hair, Our Natural Care."
+    },
     "sizes": [
-      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
-      { "label": "500 ml", "price": 600, "mrp": 600 }
+      {
+        "label": "100 ml",
+        "price": 150,
+        "mrp": 150,
+        "default": true
+      },
+      {
+        "label": "500 ml",
+        "price": 600,
+        "mrp": 600
+      }
     ]
   },
   {
-    "id": 2, "name": "Classic Herbal Hair Growth Oil", "category": "oils", "bestseller": true,
+    "id": 2,
+    "name": "Herbal Dandruff Care Oil",
+    "category": "oils",
+    "bestseller": true,
+    "stock": 6,
     "image": "/images/products/classic-hair-growth-oil.jpg",
-    "description": "Our original formula, made from 100% natural ingredients with a time-honoured slow herbal infusion for deep nourishment and root strengthening. Best before 24 months from manufacturing.",
+    "tagline": "Healthy Scalp, Natural Care!",
+    "description": "Give your scalp the care it deserves with Aadhini Organics Herbal Dandruff Care Oil. Inspired by traditional herbal hair care, this nourishing oil is designed to complement your regular scalp care routine.",
+    "ingredients": "Coconut oil and selected herbal ingredients.",
+    "benefits": [
+      "Helps nourish the scalp.",
+      "Supports regular scalp care.",
+      "Helps keep the scalp feeling moisturised.",
+      "Inspired by traditional herbal care."
+    ],
+    "howToUse": [
+      "Apply a small amount of oil to your scalp.",
+      "Gently massage with your fingertips.",
+      "Leave it on for a short period, then wash your hair.",
+      "Use according to your scalp's needs."
+    ],
+    "closing": {
+      "title": "Pure Natural Care",
+      "text": "Nature's Touch for Your Hair."
+    },
     "sizes": [
-      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
-      { "label": "500 ml", "price": 600, "mrp": 600 }
+      {
+        "label": "100 ml",
+        "price": 150,
+        "mrp": 150,
+        "default": true
+      },
+      {
+        "label": "500 ml",
+        "price": 600,
+        "mrp": 600
+      }
     ]
   },
   {
-    "id": 3, "name": "Pure & Natural Coconut Oil", "category": "oils", "bestseller": true,
+    "id": 3,
+    "name": "Pure Coconut Oil",
+    "category": "oils",
+    "bestseller": true,
+    "stock": 9,
     "image": "/images/products/coconut-oil.jpg",
-    "description": "Made with nature's best. Nourishes, moisturizes and protects — promotes hair growth, deeply moisturizes skin, strengthens and nourishes. No added chemicals, no preservatives, 100% pure. For healthy skin, hair & life.",
+    "tagline": "Pure Goodness, Straight from Nature!",
+    "description": "Experience the natural goodness of coconut oil with Aadhini Organics Pure Coconut Oil. A versatile addition to your everyday hair care routine, crafted with simplicity and inspired by nature.",
+    "ingredients": "100% Coconut Oil.",
+    "benefits": [
+      "Helps nourish your hair.",
+      "Helps keep hair soft and manageable.",
+      "Helps moisturise the scalp and hair.",
+      "Suitable for regular hair care."
+    ],
+    "howToUse": [
+      "Take a suitable amount of oil.",
+      "Apply gently to your scalp and hair.",
+      "Massage with your fingertips.",
+      "Leave it on before washing your hair."
+    ],
+    "closing": {
+      "title": "Pure Natural Care",
+      "text": "Simple. Pure. Naturally Yours."
+    },
     "sizes": [
-      { "label": "100 ml", "price": 150, "mrp": 150, "default": true },
-      { "label": "500 ml", "price": 600, "mrp": 600 }
+      {
+        "label": "100 ml",
+        "price": 150,
+        "mrp": 150,
+        "default": true
+      },
+      {
+        "label": "500 ml",
+        "price": 600,
+        "mrp": 600
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Kuppaimeni Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/kuppaimeni-soap.jpg",
+    "description": "Aadhini Organics Kuppaimeni Soap — made with Kuppaimeni and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Red Wine Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/red-wine-soap.jpg",
+    "description": "Aadhini Organics Red Wine Soap — made with red wine and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Red Chandan Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/red-chandan-soap.jpg",
+    "description": "Aadhini Organics Red Chandan Soap — made with red chandan and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Vetiver Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/vetiver-soap.jpg",
+    "description": "Aadhini Organics Vetiver Soap — made with vetiver and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Rice Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/rice-soap.jpg",
+    "description": "Aadhini Organics Rice Soap — made with rice and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Charcoal Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/charcoal-soap.jpg",
+    "description": "Aadhini Organics Charcoal Soap — made with charcoal and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Nalangu Maavu Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/nalangu-maavu-soap.jpg",
+    "description": "Aadhini Organics Nalangu Maavu Soap — made with traditional nalangu maavu and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Goat Milk Soap",
+    "category": "soaps",
+    "bestseller": false,
+    "image": "/images/products/goat-milk-soap.jpg",
+    "description": "Aadhini Organics Goat Milk Soap — made with goat milk and inspired by traditional natural care for your everyday bath.",
+    "sizes": [
+      {
+        "label": "1 Bar",
+        "price": 120,
+        "mrp": 120,
+        "default": true
+      }
     ]
   }
 ]

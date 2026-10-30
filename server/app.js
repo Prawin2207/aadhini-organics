@@ -34,7 +34,8 @@ const isEmail = (v) => typeof v === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.tes
 
 app.get('/api/categories', (req, res) => {
   res.json([
-    { slug: 'oils', name: 'Cold-Pressed Oils', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80' }
+    { slug: 'oils', name: 'Hair Oils' },
+    { slug: 'soaps', name: 'Herbal Soaps' }
   ]);
 });
 
@@ -86,7 +87,7 @@ app.post('/api/orders', (req, res) => {
     lines.push({ id: p.id, name: p.name, size: s.label, price: s.price, qty: Number(qty) });
   }
   const subtotal = lines.reduce((s, l) => s + l.price * l.qty, 0);
-  const shipping = subtotal >= 999 ? 0 : 60;
+  const shipping = subtotal > 1500 ? 0 : 60; // free delivery above ₹1500
   const orderId = 'AO' + Date.now().toString().slice(-8);
   appendJson('orders.json', { orderId, customer: customer || {}, lines, subtotal, shipping, total: subtotal + shipping });
   res.json({ orderId, total: subtotal + shipping });

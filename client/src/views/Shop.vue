@@ -1,9 +1,9 @@
 <template>
   <section class="page-hero">
     <div class="container">
-      <span class="eyebrow">Natural Oils</span>
+      <span class="eyebrow">Pure Natural Care</span>
       <h1>Shop <em>Aadhini</em></h1>
-      <p class="lead">Herbal hair oils and pure coconut oil, made in small batches.</p>
+      <p class="lead">Herbal hair oils, pure coconut oil and natural soaps, made in small batches.</p>
     </div>
   </section>
 

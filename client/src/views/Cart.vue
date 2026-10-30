@@ -1,11 +1,11 @@
 <template>
-  <section class="page-hero">
+  <section class="page-hero cart-hero">
     <div class="container">
       <h1>Your <em>Cart</em></h1>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section cart-section">
     <div class="container">
       <div v-if="order" class="card done">
         <h2>🌿 Thank you{{ order.name ? `, ${order.name}` : '' }}!</h2>
@@ -44,7 +44,13 @@
           <h3>Order Summary</h3>
           <div class="row"><span>Subtotal</span><span>{{ rupees(cart.subtotal) }}</span></div>
           <div class="row"><span>Shipping</span><span>{{ cart.shipping ? rupees(cart.shipping) : 'Free' }}</span></div>
-          <p v-if="cart.shipping" class="hint">Add {{ rupees(999 - cart.subtotal) }} more for free shipping</p>
+          <div class="ship-goal">
+            <p v-if="cart.shipping">Add <strong>{{ rupees(FREE_SHIPPING_MIN + 1 - cart.subtotal) }}</strong> more for <em>free delivery</em></p>
+            <p v-else>✓ You've unlocked <em>free delivery</em></p>
+            <div class="meter" aria-hidden="true">
+              <span :style="{ width: Math.min(100, (cart.subtotal / FREE_SHIPPING_MIN) * 100) + '%' }"></span>
+            </div>
+          </div>
           <div class="row total"><span>Total</span><span>{{ rupees(cart.total) }}</span></div>
 
           <form @submit.prevent="checkout">
@@ -70,6 +76,7 @@
 import { reactive, ref } from 'vue';
 import { useCart } from '../stores/cart.js';
 import { api, rupees } from '../api.js';
+import { FREE_SHIPPING_MIN } from '../promo.js';
 
 const cart = useCart();
 const customer = reactive({ name: '', phone: '', address: '' });
@@ -88,7 +95,7 @@ function whatsappMessage(orderId) {
     ...lines,
     ``,
     `Subtotal: ${rupees(cart.subtotal)}`,
-    `Shipping: ${cart.shipping ? rupees(cart.shipping) : 'Free'}`,
+    `Delivery: ${cart.shipping ? rupees(cart.shipping) : 'Free'}`,
     `Total: ${rupees(cart.total)} (Cash on Delivery)`,
     ...(customer.name || customer.phone || customer.address ? [''] : []),
     ...(customer.name ? [`Name: ${customer.name}`] : []),
@@ -118,6 +125,29 @@ async function checkout() {
 </script>
 
 <style scoped>
+.cart-hero {
+  padding: 1.5rem 0;
+}
+.cart-hero h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 42px;
+}
+.cart-section {
+  padding-top: 2rem;
+}
+@media (max-width: 767px) {
+  .cart-hero {
+    padding: 1rem 0;
+  }
+  .cart-hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .cart-section {
+    padding-top: 1.25rem;
+  }
+}
 .layout {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
@@ -201,10 +231,33 @@ async function checkout() {
   font-size: 18px;
   color: var(--forest);
 }
-.hint {
+.ship-goal {
+  margin: 10px 0 4px;
+  padding: 12px 14px;
+  border-radius: var(--r);
+  background: rgba(217, 130, 43, 0.07);
+  border: 1px solid rgba(217, 130, 43, 0.25);
+}
+.ship-goal p {
+  margin: 0 0 8px;
   font-size: 13px;
-  color: var(--terracotta);
-  margin: 4px 0 0;
+}
+.ship-goal em {
+  font: italic 600 15px var(--serif);
+  color: var(--forest);
+}
+.meter {
+  height: 5px;
+  border-radius: 5px;
+  background: var(--bone);
+  overflow: hidden;
+}
+.meter span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--turmeric), var(--forest));
+  transition: width 0.5s ease;
 }
 .addr {
   min-height: 90px;

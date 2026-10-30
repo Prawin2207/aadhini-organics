@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { FREE_SHIPPING_MIN, SHIPPING_FEE } from '../promo.js';
 
 const KEY = 'aadhini-cart-v3';
 
@@ -16,7 +17,7 @@ export const useCart = defineStore('cart', {
     count: (s) => s.items.reduce((n, i) => n + i.qty, 0),
     subtotal: (s) => s.items.reduce((n, i) => n + i.qty * i.price, 0),
     shipping() {
-      return this.subtotal === 0 || this.subtotal >= 999 ? 0 : 60;
+      return this.subtotal === 0 || this.subtotal > FREE_SHIPPING_MIN ? 0 : SHIPPING_FEE;
     },
     total() {
       return this.subtotal + this.shipping;
